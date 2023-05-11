@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+    <div class="row mt-5">
+        <div class="col-lg-5 col-md-12 col-12">
+            <img class ="img-fluid w-75 pb-1 " src="../static/images/brazil.jpg" id="MainImg">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="../static/images/brazil.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/brazil3.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/brazil4.jpg" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <h3 class="py-4"><strong>Retro Brazil Shirt</strong></h3>
+            <br>
+            <h2> £149.99</h2>
+            <br>
+            <form action="{{ url_for('add_to_basket', product_id=3) }}" method="post">
+                <button type="submit" class="buy"> Add to basket <span>Confirm</span></button>
+            <h4 class="mt-5 mb-5"> Product details </h4>
+            <p>Introducing the Brazil Football Shirt 2000, a classic piece of footballing history that pays homage to one of the 
+                greatest teams of all time. Worn by the likes of Ronaldo, Rivaldo, and Cafu, this iconic yellow and green shirt 
+                features the famous Brazil crest and is made from a lightweight, breathable fabric that will keep you comfortable on 
+                and off the pitch.
+            </p>
+        </div>
+        
+    </div>
+
+    <script>
+        var MainImg = document.getElementById('MainImg');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick= function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick= function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick= function(){
+            MainImg.src = smallimg[2].src;
+        }
+        
+
+    </script>
+
+</body>
+
+{% endblock %}
+</html>

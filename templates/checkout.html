@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <title>Checkout</title>
+    <title>Payment</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section id ="plain">
+    <h1>Checkout</h1>
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" pattern="\d{16}" maxlength="16" title="Please enter a 16-digit card number" required><br>
+        
+        <label for="card_name">Cardholder Name:</label>
+        <input type="text" id="card_name" name="card_name" required><br>
+        
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="text" id="expiry" name="expiry" maxlength="5" placeholder="MM/YY">
+        <br>
+        
+        <label for="cvv">CVV:</label>
+        <input type="text" maxlength="3" id="cvv" name="cvv" required><br>
+        
+        <button type="submit" class="buy" onclick="validatePayment()">Submit <span>Confirm</span></button>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <script>
+            function validatePayment() {
+                var cardNumber = document.getElementById('card_number').value;
+                var cardName = document.getElementById('card_name').value;
+                var expiry = document.getElementById('expiry').value;
+                var cvv = document.getElementById('cvv').value;
+                var errorMessage = document.getElementById('error-message');
+
+                if (cardNumber.length !== 16 || !(/^\d+$/.test(cardNumber))) {
+                    errorMessage.innerHTML = 'Invalid card number. Please enter a 16-digit card number.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                if (cardName.trim().length === 0) {
+                    errorMessage.innerHTML = 'Please enter the cardholder name.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) {
+                    errorMessage.innerHTML = 'Invalid expiry date. Please enter in MM/YY format.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                if (cvv.length !== 3 || !(/^\d+$/.test(cvv))) {
+                    errorMessage.innerHTML = 'Invalid CVV. Please enter a 3-digit CVV.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                // Payment successful
+                alert('Payment Successful');
+                
+            }
+
+            document.getElementById('expiry').addEventListener('input', function (e) {
+                var target = e.target;
+                var val = target.value.replace(/\D/g, '').substring(0, 4);
+                var month = val.substring(0, 2);
+                var year = val.substring(2, 4);
+
+                target.value = month + (year.length > 0 ? '/' + year : '');
+            });
+        </script>
+    </section>
+</body>
+
+{% endblock %}

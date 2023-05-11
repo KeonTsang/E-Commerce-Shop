@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+    <div class="row mt-5">
+        <div class="col-lg-5 col-md-12 col-12">
+            <img class ="img-fluid w-75 pb-1 " src="../static/images/england.jpg" id="MainImg">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="../static/images/england.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/england3.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/england4.jpg" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <h3 class="py-4"><strong>Retro England Shirt</strong></h3>
+            <br>
+            <h2> £149.99</h2>
+            <br>
+
+            <form action="{{ url_for('add_to_basket', product_id=1) }}" method="post">
+                <button type="submit" class="buy"> Add to basket <span>Confirm</span></button>
+            <h4 class="mt-5 mb-5"> Product details </h4>
+            <p>This Umbro sponsered England kit is a staple to English football and was worn by the iconic and 
+                legendary team that included the likes of Lampard, Gerrard and many more. This shirt is an authentic garment and made with
+                the official line that came out in the 2000s. It is made from high quality fabrics and is extremely breathable as it used
+                the highest of technologies when being manufactured allowing any player to move freely and comfortably on the pitch.
+            </p>
+        </div>
+        
+    </div>
+
+    <script>
+        var MainImg = document.getElementById('MainImg');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick= function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick= function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick= function(){
+            MainImg.src = smallimg[2].src;
+        }
+        
+
+    </script>
+
+</body>
+
+{% endblock %}
+</html>

@@ -1,0 +1,401 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: darkslategrey;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -100px;
+}
+
+body {
+  width: 100%;
+}
+
+
+
+#navbar li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 20px;
+}
+
+#navbar li a {
+  color: #ffff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+#navbar li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.25s;
+}
+
+#navbar li:hover::after {
+  width: 100%;
+}
+
+#hero {
+  background-image: url(../images/image.jpg);
+  width: 89.45%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#plain{
+  background-image: url(../images/gradient.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 200px;
+  height: 230px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  opacity: 1;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+.card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 1;
+  opacity: 1
+}
+
+.card-text{
+  opacity: 1;
+}
+
+.cardTest {
+  width: 100%;
+  height: 330px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 30px auto 10px auto;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url(../images/messironaldo.jpg);
+  
+}
+
+.cardTest::after{
+  content: '';
+  width: 0%;
+  height: 4px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.25s;
+}
+
+.cardAdvert {
+  width: 400px;
+  height: 200px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 30px auto 10px auto;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/advertWork.png);
+  
+}
+
+.cardTest:hover::after {
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cardAdvert:hover {
+  transform: translateY(-10px);
+}
+
+.card1 {
+  background-image: url(../images/pele2.jpg);
+}
+
+.card2 {
+  background-image: url(../images/maradona.jpg);
+}
+
+.card3 {
+  background-image: url(../images/zidan2.jpeg);
+}
+
+.card4 {
+  background-image: url(../images/puyol2.jpeg);
+}
+
+
+.card h3 {
+  color: yellow;
+}
+
+.card2 h3 {
+  color: #d78cff;
+}
+
+.card3 h3 {
+  color: yellow;
+}
+
+.card4 h3 {
+  color: #d78cff;
+  
+}
+
+
+
+.productCard2 h5{
+  color: blueviolet;
+}
+
+.productCard3{
+  
+  color: seagreen;
+}
+
+.productCard4{
+ 
+  color: white;
+}
+
+.productCard5{
+
+  color: aqua;
+}
+
+.productCard6{
+  
+  color: brown
+}
+
+
+
+h1 {
+  font-size: 400%;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h3{
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: 'Raleway', sans-serif !important;
+}
+
+h4{
+  font-family: 'Raleway', sans-serif !important;
+}
+
+.small-img-group{
+  display:flex;
+}
+
+.small-img-col{
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+.small-img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+
+
+.buy {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: #18181a;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buy span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.buy span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.buy:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.buy:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.buy:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.basket-logo {
+  display: inline-block;
+  width: 25px; /* Adjust the width as needed */
+  height: 25px; /* Adjust the height as needed */
+  background: none !important;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.confirm {
+  --b: 3px;   
+  --s: .45em; 
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.confirm:hover,
+.confirm:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.confirm:active {
+  background: var(--color);
+  color: #fff;
+}
+
+

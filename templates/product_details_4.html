@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    </head>
+
+    <body>
+
+    <div class="row mt-5">
+        <div class="col-lg-5 col-md-12 col-12">
+            <img class ="img-fluid w-75 pb-1 " src="../static/images/messi.jpg" id="MainImg">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="../static/images/messi.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/messi2.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/messi3.jpg" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <h3 class="py-4"><strong>Signed Messi shirt - 2021</strong></h3>
+            <br>
+            <h2> £299.99</h2>
+            <br>
+            <form action="{{ url_for('add_to_basket', product_id=4) }}" method="post">
+                <button type="submit" class="buy"> Add to basket <span>Confirm</span></button>
+            <h4 class="mt-5 mb-5"> Product details </h4>
+            <p>Introducing the Signed Lionel Messi Shirt from 2021, a rare and highly sought-after piece of football memorabilia that is
+                 sure to be the jewel in any collector's crown. This stunning shirt, signed by none other than the legendary
+                  Lionel Messi himself, features the iconic blue and garnet stripes of FC Barcelona and is made from high-quality
+                   materials that are both durable and comfortable. 
+        
+            </p>
+        </div>
+        
+    </div>
+
+    <script>
+        var MainImg = document.getElementById('MainImg');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick= function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick= function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick= function(){
+            MainImg.src = smallimg[2].src;
+        }
+        
+
+    </script>
+
+</body>
+
+{% endblock %}
+</html>

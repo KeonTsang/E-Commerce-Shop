@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Retro Football Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+
+</head>
+    {% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <section id="plain">
+    <div class="container">
+        <a type="submit" href="/sort_price" class="confirm"> Sort by price </a>
+        <a type="submit" href="/sort_name" class="confirm"> Sort by name </a>
+        <div class="row">
+            {% for grocery in groceries %}
+            <div class="card productCard{{loop.index}}" onclick="location.href='/view/{{ grocery.id }}'">
+                <div class="card-image" style="background-image: url('{{ grocery.image_url }}');"></div>
+                <div class="card-body">
+                    <h5>{{ grocery.name }}</h5>
+                    <p class="card-text">Price: £ {{ grocery.price }}</p>
+                    <form action="{{ url_for('add_to_basket', product_id=grocery.id) }}" method="post">
+                        <button type="submit" class="buy"> Add to basket <span>Confirm</span></button>
+                    </form>
+                </div>
+            </div>
+            
+        {% endfor %}
+        </div>
+        </div>
+    
+    </div>
+    </section>
+    
+    </body>
+
+{% endblock %}
+</html>

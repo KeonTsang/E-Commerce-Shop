@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+    <div class="row mt-5">
+        <div class="col-lg-5 col-md-12 col-12">
+            <img class ="img-fluid w-75 pb-1 " src="../static/images/arsenal.jfif" id="MainImg">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="../static/images/arsenal.jfif" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/arsenal2.jpg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="../static/images/arsenal3.jpg" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <h3 class="py-4"><strong>Retro Arsenal Shirt</strong></h3>
+            <br>
+            <h2> £130.99</h2>
+            <br>
+            <form action="{{ url_for('add_to_basket', product_id=2) }}" method="post">
+                <button type="submit" class="buy"> Add to basket <span>Confirm</span></button>
+            <h4 class="mt-5 mb-5"> Product details </h4>
+            <p>Introducing the 1992 Arsenal Kit, a legendary piece of football history that is sure to ignite the passion of any die
+                -hard Arsenal fan! This iconic kit was worn by the likes of Ian Wright, Tony Adams and David Rocastle during the 1991-92 season,
+                 a time when Arsenal dominated the English Premier League.
+            </p>
+        </div>
+        
+    </div>
+
+    <script>
+        var MainImg = document.getElementById('MainImg');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick= function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick= function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick= function(){
+            MainImg.src = smallimg[2].src;
+        }
+        
+
+    </script>
+
+</body>
+
+{% endblock %}
+</html>
